@@ -1,7 +1,10 @@
-import { Inter } from "next/font/google";
+import { Marcellus } from "next/font/google";
 import "./globals.css";
+import Sidebar from "./component/navigater/Sidebar";
+import Navigatebar from "./component/navigater/Navigatebar";
 
-const inter = Inter({ subsets: ["latin"] });
+const marcellus = Marcellus({  weight: '400',
+  subsets: ['latin'],});
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={marcellus.className}>
+     
+        <Sidebar /><div style={{display:"flex",flexDirection:"column",width:"100%"}}><Navigatebar />{children}</div></body>
     </html>
   );
 }
