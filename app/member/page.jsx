@@ -1,7 +1,12 @@
-import React from 'react'
+
+import Member from './component/Member';
 
 export default function MemberPage() {
+
+  
   return (
-    <div>Member Page</div>
+   <>
+   <Member />
+   </>
   )
 }

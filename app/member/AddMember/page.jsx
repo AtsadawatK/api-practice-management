@@ -1,7 +1,10 @@
 import React from 'react'
+import AddUser from './AddMember'
 
 export default function page() {
   return (
-    <div>sdfsdfds   55555  666666 </div>
+    <>
+    <AddUser />
+    </>
   )
 }

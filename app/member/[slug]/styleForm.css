@@ -1,0 +1,60 @@
+.form-container{
+display: flex;
+  padding:20px;
+  justify-content: space-between;
+}
+.form-box{
+  border:1px solid white;
+  border-radius:8px;
+  margin-top: 10px;
+  height: 250px;
+  
+}
+.form-label{
+  font-size: 24px;
+  color: #FFFFFF;
+  font-weight: 600;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-tab-menu{
+  
+  
+}
+.form-tab-profile{
+  border-bottom: 2px solid rgb(255, 0, 0);
+  width:100px;
+  display:flex;
+  justify-content: center;
+  color:#FFFFFF;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 10px 0px 5px 0px;
+}
+.box-edit-form{
+  display:flex;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  height:100%;
+  color:#FFFFFF;
+}
+input{
+  border-radius: 8px;
+  width:80%;
+  color:black;
+  padding-left:10px;
+}
+.button-update{
+  border-radius: 8px;
+  background-color: #5c4d83;
+  padding:10px;
+  width:100%;
+}
+.button-update:hover{
+
+  
+  background-color: #a785ff;
+
+}
