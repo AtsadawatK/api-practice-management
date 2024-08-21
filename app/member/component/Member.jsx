@@ -44,7 +44,7 @@ export default function Member() {
     </div>
 
     <div style={{display:"flex",}}>
-      <form action="" style={{position:"relative",alignItems:"center",paddingRight:"50px",}} > 
+      {/* <form action="" style={{position:"relative",alignItems:"center",paddingRight:"50px",}} > 
 
       <input className ="Member-search" type="text" placeholder="Search" name="search" ></input>
        <div style={{
@@ -52,16 +52,15 @@ export default function Member() {
       top:12,
       right:60,
       color:"#FFFFFF",
-      cursor:"pointer"
+      cursor:"pointer",
     }}>
       <MdSearch style={{width:"25px",height:"25px"}}/></div>
-      </form>
+      </form> */}
 
-      <div className="Add-Button" style={{display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",padding:"0px 10px 0px 10px",borderRadius:"10px"}} onClick={() => { window.location.href = '/member/AddMember'; }}><IoMdPersonAdd style={{width:"25px",height:"25px",color:"white"}}/></div>
+      <div className="Add-Button" style={{display:"flex",alignItems:"center",cursor:"pointer",margin:"0px 0px 0px 0px",}} onClick={() => { window.location.href = '/member/AddMember'; }}>
+        <div style={{widtd:"25px",height:"25px"}}>
+        <IoMdPersonAdd style={{width:"100%",height:"100%",color:"white"}}/></div></div>
     </div>
-
-    
-
     </div>
     
 
@@ -94,6 +93,10 @@ export default function Member() {
 
     </div>
     </div>
+
+
+
+
     <div style={{display:"flex",justifyContent:"end",paddingTop:15}}>
       
       <div className='pageNumber' style={{display:"flex",gap:50,paddingRight:50,alignItems:"center"}}>

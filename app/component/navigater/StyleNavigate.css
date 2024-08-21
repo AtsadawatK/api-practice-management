@@ -1,8 +1,6 @@
 .navigate-container{
-    padding: 20px;
-    width: 100%;
     height:12vh;
-    
+    width:100vw;
 }
 .navigate-iconbutton-back{
     padding:10px;

@@ -1,0 +1,66 @@
+.popular-main{
+    background: rgb(42,15,211);
+background: linear-gradient(40deg, rgba(42,15,211,1) 0%, rgba(255,122,122,1) 100%);
+    border-radius: 20px;
+    height:100%;
+    width:100%;
+    border:2px solid #000000;
+    position: relative;
+}
+
+/* XS 0px - 300px */
+@media only screen and (min-width: 0px) and  (max-width: 300px) {
+    .popular-main{
+        border-radius: 0px;
+        height:20vh;
+        border:0px solid #000000;
+    }
+}
+
+/* XS 0px - 600px */
+@media only screen and (min-width: 0px) and  (max-width: 640px) {
+    .popular-main{
+        border-radius: 0px;
+        height:20vh;
+        border:0px solid #000000;
+    }
+}
+
+
+/* SM 601px - 820px */
+@media only screen and (min-width: 641px) and  (max-width: 820px) {
+    .popular-main{
+        border-radius: 0px;
+        height:20vh;
+        border:0px solid #000000;
+    }
+}
+
+/* MD 821px - 1250px */
+@media only screen and (min-width: 821px) and  (max-width: 1250px) {
+    .popular-main{
+        border-radius: 0px;
+        height:20vh;
+        border:0px solid #000000;
+    }
+}
+
+
+/* LG 1251px - 1500px */
+@media only screen and (min-width: 1251px) and  (max-width: 1500px) {
+    .popular-main{
+        height:20vh;
+    }
+}
+
+/* XL 1501px ++  */
+@media only screen and (min-width: 1501px)    {
+    
+}
+
+
+/* XXL 1921 ++ px */
+@media only screen and (min-width: 1921px)  {
+    
+}
+

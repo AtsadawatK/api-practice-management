@@ -1,35 +1,38 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
-  } from 'chart.js';
+import 'chart.js/auto'
 
 
   import { Line } from 'react-chartjs-2';
-  import "./style.css"
+  import "./StyleCharts.css"
 
-  ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend
-  );
+ 
 
-
-export default function TestGraph() {
+export default function Charts() {
   const [chartData, setChartData] = useState({ labels: [], datasets: [] });
   const [selectedCoin, setSelectedCoin] = useState('bitcoin');
   const [coinList, setCoinList] = useState([]);
   const [date, setDate] = useState('1');
+  const [fontSize, setFontSize] = useState(12);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 600) {
+        setFontSize(7);
+      } else if (window.innerWidth <= 820) {
+        setFontSize(10);
+      } else {
+        setFontSize(12);
+      }
+    };
+
+    handleResize(); // Set initial font size
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
 
   useEffect(() => {
     fetchCoinList();
@@ -49,6 +52,7 @@ export default function TestGraph() {
       const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=thb&order=market_cap_desc&per_page=100&page=1&sparkline=false');
       const data = await response.json();
       setCoinList(data);
+      
     } catch (error) {
       console.error('เกิดข้อผิดพลาดในการดึงรายชื่อเหรียญ:', error);
     }
@@ -93,7 +97,11 @@ export default function TestGraph() {
       plugins: {
         legend: {
           display: false,
-        },
+          labels: {
+            font: {
+              size: 5, // ปรับขนาดฟอนต์ของ legend
+            },
+        }},
         tooltip: {
           mode: 'index',
           intersect: false,
@@ -112,13 +120,22 @@ export default function TestGraph() {
         },
       },
       scales: {
-       
+        x: {
+          ticks: {
+            font: {
+              size: fontSize,
+            },
+          },
+        },
         y: {
           beginAtZero: false,
           ticks: {
             callback: function(value, index, values) {
               return new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB', maximumFractionDigits: 0 }).format(value);
-            }
+            },
+            font: {
+              size: fontSize,
+            },
           }
         }
       },
@@ -156,15 +173,15 @@ const handleChang30day = () => {
     
    <>
    
-   <div style={{border:"2px solid #868B93",width:"40%",margin:"20px",borderRadius:"25px",height:"410px",backgroundColor:"#3C354A",padding:"20px" ,}}>
+   <div className='container-charts'>
 
     <div style={{display:"flex",justifyContent:"space-between",width:"100%"}}>
-   <div style={{height:"30%"}}>
+   <div style={{height:"30%",width:"50%"}}>
    <select 
-     id="coin-select"
+     className='select'
      value={selectedCoin} 
      onChange={(e) => setSelectedCoin(e.target.value)}
-     style={{padding: '10px', fontSize: '16px' ,backgroundColor:"#1A111D",borderRadius:"10px",color:"#FFFFFF",}}
+     style={{padding: '10px', fontSize: '16px' ,backgroundColor:"#1A111D",borderRadius:"10px",color:"#FFFFFF",width:"100%"}}
    >
      {coinList.map((coin) => (
        <option key={coin.id} value={coin.id} style={{minWidth:"200px",maxWidth:"200px"}}>{coin.name}</option>
@@ -173,17 +190,17 @@ const handleChang30day = () => {
  </div>
 
 
- <div style={{display:"flex",alignItems:"center",height:"30%",justifyContent:"space-between",width:"30%",paddingRight:"20px"}}>
+ <div className="select-date" >
    <div className="date" style={{borderRadius:"10px",color:date === "1" ? "#FFFFFF" : "#868B93",padding:"10px",fontSize:"14px",cursor:"pointer"}} onClick={handleChang1day}>1D</div>
    <div className="date" style={{borderRadius:"10px",color:date === "7" ? "#FFFFFF" : "#868B93",padding:"10px",fontSize:"14px",cursor:"pointer"}} onClick={handleChang7day}>1W</div>
    <div className="date" style={{borderRadius:"10px",color:date === "30" ? "#FFFFFF" : "#868B93",padding:"10px",fontSize:"14px",cursor:"pointer"}} onClick={handleChang30day}>1M</div>
    </div>
 
 
-   </div>
+   </div> 
 
    
-    <div style={{color:"white",width:"100%" ,paddingRight:"20px",marginTop:"10px"}}>
+    <div  className="charts-container" >
     <Line 
     options={options}
     data={chartData}

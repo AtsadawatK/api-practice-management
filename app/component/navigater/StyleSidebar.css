@@ -5,12 +5,15 @@
     position: sticky;
     width: 150px;
     overflow: hidden;
+    top: 0;
+    z-index: 10;
 }
 
 .container{
     display: flex;
     flex-grow: 1;
-    overflow-y: auto;
+    overflow: hidden;
+    z-index: 10;
 }
 
 .box{
@@ -110,35 +113,47 @@ border-radius: 13px;
 
 /* XS 0px - 600px */
 @media only screen and (min-width: 0px) and  (max-width: 640px) {
-    
+    .main{
+        display:none;
     }
-  
+}
+
 
 
 /* SM 601px - 820px */
 @media only screen and (min-width: 641px) and  (max-width: 820px) {
-    
-  }
+    .main{
+        display:none;
+    }
+}
 
 /* MD 821px - 1250px */
 @media only screen and (min-width: 821px) and  (max-width: 1250px) {
-    
-  }
+    .main{
+        display:none;
+    }
+}
 
 
-/* LG 1251px - 1530px */
-@media only screen and (min-width: 1251px) and  (max-width: 1530px) {
-    
-  }
+/* LG 1251px - 1500px */
+@media only screen and (min-width: 1251px) and  (max-width: 1500px) {
+    .main{
+        display:flex;
+    }
+}
 
-/* XL 1531px ++  */
-@media only screen and (min-width: 1531px)    {
-    
-  }
+/* XL 1501px ++  */
+@media only screen and (min-width: 1501px)    {
+    .main{
+        display:flex;
+    }
+}
 
 
 /* XXL 1921 ++ px */
 @media only screen and (min-width: 1921px)  {
-   
-  }
+    .main{
+        display:flex;
+    }
+}
 

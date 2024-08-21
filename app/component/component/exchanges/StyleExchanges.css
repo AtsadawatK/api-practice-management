@@ -1,0 +1,67 @@
+.box-exchanges-ranking{
+    color: #FFFFFF;
+    height:100%;
+    overflow: hidden;
+
+}
+
+.exchanges-ranking-table{
+    padding-top:10px;
+    overflow-x: hidden;
+    height:90%;
+    
+}
+.Table-exchanges{
+    
+    width: 100%;
+   
+   
+}
+
+/* XS 0px - 600px */
+@media only screen and (min-width: 0px) and  (max-width: 640px) {
+    .box-exchanges-ranking{
+        font-size:12px;
+    
+    }
+    
+}
+
+
+
+/* SM 601px - 820px */
+@media only screen and (min-width: 641px) and  (max-width: 820px) {
+    .box-exchanges-ranking{
+        font-size:12px;
+    
+    }
+    
+}
+
+/* MD 821px - 1250px */
+@media only screen and (min-width: 821px) and  (max-width: 1250px) {
+    .box-exchanges-ranking{
+        font-size:12px;
+    
+    }
+    
+}
+
+
+/* LG 1251px - 1500px */
+@media only screen and (min-width: 1251px) and  (max-width: 1500px) {
+    
+    
+}
+
+/* XL 1501px ++  */
+@media only screen and (min-width: 1501px)    {
+   
+}
+
+
+/* XXL 1921 ++ px */
+@media only screen and (min-width: 1921px)  {
+    
+}
+
